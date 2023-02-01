@@ -13,6 +13,9 @@ const toTopBtn = document.getElementById('to-top');
 
 let pageNo = 1;
 
+loadMoreBtn.style.display = 'none';
+toTopBtn.style.display = 'none';
+
 const lightbox = new SimpleLightbox('.gallery a');
 
 function galleryRender(image) {
