@@ -9,6 +9,7 @@ const searchBtn = document.querySelector('button[type="submit"]');
 const searchInput = document.querySelector('input[name="searchQuery"]');
 const loadBtn = document.querySelector('.load-more');
 const gallery = document.querySelector('.gallery');
+const toTopBtn = document.getElementById('to-top');
 
 let pageNo = 1;
 
@@ -110,4 +111,16 @@ loadBtn.addEventListener('click', event => {
   event.preventDefault();
   pageNo++;
   getImages(pageNo);
+});
+
+document.addEventListener('scroll', () => {
+    if (window.pageYOffset === 0) {
+        toTopBtn.style.display = 'none';
+    } else {
+        toTopBtn.style.display = 'block';
+    }
+});
+
+toTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
