@@ -107,12 +107,14 @@ async function getImages(pageNo) {
 searchBtn.addEventListener('click', event => {
   event.preventDefault();
   gallery.innerHTML = '';
+  loadBtn.classList.add('is-hidden');
+  pageNo = 1;
   getImages(pageNo);
 });
 
 loadBtn.addEventListener('click', event => {
   event.preventDefault();
-  pageNo;
+  pageNo++;
   getImages(pageNo);
 });
 
