@@ -55,7 +55,7 @@ async function getImages(pageNo) {
         image_type: 'photo',
         orientation: 'horizontal',
         safesearch: true,
-        page: pageNo,
+        // page: pageNo,
         per_page: 40,
       },
     });
@@ -94,7 +94,7 @@ async function getImages(pageNo) {
         .firstElementChild.getBoundingClientRect();
 
       window.scrollBy({
-        top: cardHeight * 6,
+        top: cardHeight * 2,
         behavior: 'smooth',
       });
     }
@@ -111,9 +111,11 @@ searchBtn.addEventListener('click', event => {
 
 loadBtn.addEventListener('click', event => {
   event.preventDefault();
-  pageNo++;
+  pageNo;
   getImages(pageNo);
 });
+
+// tap to scroll 
 
 document.addEventListener('scroll', () => {
     if (window.pageYOffset === 0) {
