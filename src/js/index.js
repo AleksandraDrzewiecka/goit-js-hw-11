@@ -69,6 +69,7 @@ async function getImages(pageNo) {
       Notiflix.Notify.warning(
         'Sorry, there are no images matching your search query. Please try again.'
       );
+      loadBtn.classList.add('is-hidden');
     }
     if (response.data.totalHits > 0 && pageNo === 1) {
       Notiflix.Notify.info(
@@ -86,7 +87,7 @@ async function getImages(pageNo) {
       Notiflix.Notify.warning(
         "We're sorry, but you've reached the end of search results."
       );
-      loadBtn.classList.add('is-hidden');
+      // loadBtn.classList.add('is-hidden');
     }
     if (pageNo > 1) {
       const { height: cardHeight } = document
