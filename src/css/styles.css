@@ -104,13 +104,16 @@ button[type='submit']:hover {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 4px;
-  transition: transform var(--animation-duration) var(--timing-function);
+  border-radius: 4px 4px 0 0 ;
 }
 
-.photo-card img:hover {
-  transform: scale(1.10);
+.photo-card div {
   cursor: pointer;
+  transition: scale 0.2s;
+}
+
+.photo-card div :hover {
+  transform: scale(1.01);
 }
 
 .info {
@@ -119,7 +122,7 @@ button[type='submit']:hover {
   flex-direction: row;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 5px;
+  border-radius: 0 0 4px 4px;
 }
 
 .info-item {

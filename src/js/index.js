@@ -55,7 +55,7 @@ async function getImages(pageNo) {
         image_type: 'photo',
         orientation: 'horizontal',
         safesearch: true,
-        // page: pageNo,
+        page: pageNo,
         per_page: 40,
       },
     });
@@ -87,7 +87,7 @@ async function getImages(pageNo) {
       Notiflix.Notify.warning(
         "We're sorry, but you've reached the end of search results."
       );
-      // loadBtn.classList.add('is-hidden');
+      loadBtn.classList.add('is-hidden');
     }
     if (pageNo > 1) {
       const { height: cardHeight } = document
@@ -122,7 +122,10 @@ loadBtn.addEventListener('click', event => {
 
 document.addEventListener('scroll', () => {
     if (window.pageYOffset === 0) {
-        toTopBtn.style.display = 'none';
+      toTopBtn.style.display = 'none';
+      toTopBtn.throttle(() => {
+    console.log("Scroll handler call every 400ms");
+  }, 400)
     } else {
         toTopBtn.style.display = 'block';
     }
