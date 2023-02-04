@@ -107,13 +107,13 @@ button[type='submit']:hover {
   border-radius: 4px 4px 0 0 ;
 }
 
-.photo-card div {
+.photo-card {
   cursor: pointer;
   transition: scale 0.2s;
 }
 
-.photo-card div :hover {
-  transform: scale(1.01);
+.photo-card:hover {
+  transform: scale(1.02);
 }
 
 .info {
