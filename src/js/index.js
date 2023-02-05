@@ -123,9 +123,6 @@ loadBtn.addEventListener('click', event => {
 document.addEventListener('scroll', () => {
     if (window.pageYOffset === 0) {
       toTopBtn.style.display = 'none';
-      toTopBtn.throttle(() => {
-    console.log("Scroll handler call every 400ms");
-  }, 400)
     } else {
         toTopBtn.style.display = 'block';
     }
